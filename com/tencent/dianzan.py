@@ -40,7 +40,6 @@ class Test(unittest.TestCase):
             sleep(1)
             self.driver.tap([(668, 88)], 500)
             sleep(1)
-
             self.driver.find_element_by_name("搜索").click()
             sleep(1)
             self.driver.find_element_by_name("搜索").send_keys("594552867")
