@@ -23,8 +23,16 @@ class Test(unittest.TestCase):
 
         width = self.driver.get_window_size()['width']
         height = self.driver.get_window_size()['height']
-        Number = {"2599999997": "vtczhang", "2599999990": "987654321"}
-        for key in Number.keys():
+        dict_data = {}
+
+        # 读取文件数据且以字典的形式存储
+        f = open(r'D:\software\pycharm\workspace\login.txt', 'r+')
+        for line in f:
+            line = line.strip().split(':')
+            dict_data[line[0]] = line[1]
+        f.close()
+
+        for key in dict_data.keys():
             i = 10
             sleep(1)
             el1 = self.driver.find_element_by_android_uiautomator('new UiSelector().description("请输入QQ号码或手机或邮箱")')
@@ -36,7 +44,7 @@ class Test(unittest.TestCase):
             sleep(1)
             self.driver.tap([(760, 535), ], 500)
             sleep(1)
-            el2.send_keys(Number[key])
+            el2.send_keys(dict_data[key])
             self.driver.find_element_by_accessibility_id("登录").click()
             sleep(1)
             self.driver.tap([(668, 88)], 500)
@@ -61,8 +69,9 @@ class Test(unittest.TestCase):
             self.driver.find_element_by_name("返回").click()
             self.driver.find_element_by_android_uiautomator('new UiSelector().description("帐户及设置")').click()
             self.driver.find_element_by_android_uiautomator('new UiSelector().description("设置")').click()
+            sleep(1)
             self.driver.find_element_by_xpath('//android.widget.TextView[contains(@text, "帐号管理")]').click()
-            self.driver.swipe(width / 2, height / 2, width / 2, height / 4, 1000)
+            self.driver.swipe(width / 2, height / 2, width / 2, height / 5, 1000)
             sleep(2)
             self.driver.find_element_by_name("退出当前帐号").click()
             self.driver.find_element_by_xpath('//android.widget.TextView[contains(@text, "确认退出")]').click()
