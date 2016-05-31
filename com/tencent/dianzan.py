@@ -1,8 +1,8 @@
-'''
+"""
 Created on 2016年5月24日
 
 @author: v_tczhang
-'''
+"""
 import unittest
 from appium import webdriver
 from time import sleep
@@ -16,7 +16,6 @@ class Test(unittest.TestCase):
         desired_caps['deviceName'] = 'Android Emulator'
         desired_caps['appPackage'] = 'com.tencent.mobileqq'
         desired_caps['appActivity'] = '.activity.SplashActivity'
-
         self.driver = webdriver.Remote('http://localhost:4723/wd/hub', desired_caps)
 
     def test_Dianzan(self):
@@ -49,12 +48,10 @@ class Test(unittest.TestCase):
             sleep(1)
             self.driver.tap([(668, 88)], 500)
             sleep(1)
-
             self.driver.find_element_by_name("搜索").click()
             sleep(1)
-            el4 = self.driver.find_element_by_name("搜索")
+            self.driver.find_element_by_name("搜索").send_keys("594552867")
             #             el4.click()
-            el4.send_keys("594552867")
             self.driver.find_element_by_name("(594552867)").click()
             sleep(1)
             self.driver.find_element_by_android_uiautomator('new UiSelector().description("聊天设置")').click()
