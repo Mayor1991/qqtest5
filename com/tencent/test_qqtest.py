@@ -8,6 +8,7 @@ import os
 import unittest
 from appium import webdriver
 from time import sleep
+import Login
 from appium.webdriver.common.touch_action import TouchAction
 import sys
 import time
@@ -15,7 +16,7 @@ import HTMLTestRunner
 from unittest import runner
 from warnings import catch_warnings
 from test.testcase.Login import login
-import Login
+
 
 class ContactsAndroidTests(unittest.TestCase):
     def setUp(self):

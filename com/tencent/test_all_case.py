@@ -12,9 +12,6 @@ import unittest
 import HTMLTestRunner
 import time
 
-# from test.testcase import alltest_list
-
-
 listaa = "D:\\software\\eclipse\\eclipse\\workspace\\Test\\src\\test\\testcase\\test_case"
 
 
