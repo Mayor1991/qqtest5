@@ -52,7 +52,7 @@ class Test(unittest.TestCase):
             sleep(1)
             self.driver.find_element_by_name("搜索").send_keys("594552867")
             #             el4.click()
-            self.driver.find_element_by_name("(594552867)").click()
+            self.driver.find_element_by_name("(xxxx)").click()
             sleep(1)
             self.driver.find_element_by_android_uiautomator('new UiSelector().description("聊天设置")').click()
             self.driver.tap([(320, 240)], 500)
