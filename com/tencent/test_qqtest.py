@@ -36,12 +36,12 @@ class ContactsAndroidTests(unittest.TestCase):
     #         el1 = self.driver.find_element_by_android_uiautomator('new UiSelector().description("请输入QQ号码或手机或邮箱")')
     #         el2 = self.driver.find_element_by_android_uiautomator('new UiSelector().className("android.widget.EditText").index(2)')
     #
-    #         el1.send_keys('2202005025')
+    #         el1.send_keys('x')
     #         el2.click()
     #         sleep(2)
     #         self.driver.tap([(760, 535),], 500)
     #         sleep(1)
-    #         el2.send_keys('987654321')
+    #         el2.send_keys('x')
     #         self.driver.find_element_by_accessibility_id("登录").click()
 
     def test_add_load(self):
