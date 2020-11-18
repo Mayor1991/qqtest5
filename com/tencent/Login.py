@@ -14,10 +14,10 @@ def login(self):
     el2 = self.driver.find_element_by_android_uiautomator(
         'new UiSelector().className("android.widget.EditText").index(2)')
 
-    el1.send_keys('2202005025')
+    el1.send_keys('XXXXX')
     el2.click()
     sleep(2)
     self.driver.tap([(760, 535), ], 500)
     sleep(1)
-    el2.send_keys('987654321')
+    el2.send_keys('XXXXX')
     self.driver.find_element_by_accessibility_id("登录").click()
